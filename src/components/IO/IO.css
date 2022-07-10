@@ -1,0 +1,12 @@
+.io-main {
+    height: 150px;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.io-inner-container {
+    margin: auto;
+    position:relative; 
+}

@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { useState } from 'react';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Message from './components/Message/Message';
+import IO from './components/IO/IO';
+import Buttons from './components/Buttons/Buttons';
 
 function App() {
+
+  const [state, setState] = useState("prompt"); // prompt <-> result
+  const [score, setScore] = useState(0);
+  const [words, setWords] = useState({
+    word1: "",
+    word2: ""
+  })
+
+  console.log(score);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <div className="main">
+        <Message 
+          state={state}
+          words={words}
+        />
+        <IO
+          state={state}
+          words={words}
+          setWords={setWords}
+          score={score}
+        />
+        <Buttons 
+          state={state}
+          setState={setState}
+          words={words}
+          setWords={setWords}
+          score={score}
+          setScore={setScore}
+        />
+      </div>
+      <Footer/>
     </div>
   );
 }
