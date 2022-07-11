@@ -1,6 +1,6 @@
 .message-main {
-    height: 150px;
-    width: 50%;
+    height: 10rem;
+    width: auto;
     margin: auto;
     display: flex;
     align-items: center;
@@ -16,7 +16,7 @@
 }
 
 .word{
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
     color: #18978F;
 }
