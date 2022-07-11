@@ -15,14 +15,22 @@ function callApi(word1, word2){
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
-        },
-    }).then(response => response.json())
-    .then(response => {
-        const val = Math.round(response["similarity"] * 1000) / 10;
-        document.getElementById("score").innerHTML = val + "%";
-        console.log(val);
-        return val;
-    })
+        },}).then(response => {
+                    if(!response.ok){
+                        throw new Error(response.status);
+                    }else{
+                        return response.json();
+                    }
+                }).then(response => {
+                    console.log(response.ok);
+                    const val = Math.round(response["similarity"] * 1000) / 10;
+                    document.getElementById("score").innerHTML = val + " %";
+                    console.log(val);
+                    return val;
+                }).catch((error) => {
+                    console.log('error: ' + error);
+                    document.getElementById("score").innerHTML = "Server is not running. Sorry 😥";
+                });
 }
 
 function Buttons(props){
