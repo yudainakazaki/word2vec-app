@@ -4,24 +4,38 @@ import "./Message.css";
 function Message(props){
 
     const promptMessage = 
-        <label id="message-label">
+        <div>
             Type in two words of which you want to execute a calculation for the distance of meanings.
-        </label>;
+        </div>;
     
     const resultMessage = 
-        <label id="message-label">
+        <div>
             The similarity between 
-                <span className="word"> {props.words.word1}</span> and 
-                <span className="word"> {props.words.word2}</span> is ...
-        </label>;
+            <span className="word"> {props.words.word1}</span> and 
+            <span className="word"> {props.words.word2}</span> is ...
+        </div>
+
+    const errorMessage =
+        <div>
+            Sevrer is not running right now 😢
+        </div>
+
+    const showMessage = () => {
+        if(props.state === "prompt"){
+            return promptMessage;
+        }else if(props.state === "result"){
+            return resultMessage;
+        }else{
+            return errorMessage;
+        }
+    }
 
     return (
         <div className="message-main">
             <div className="message-label-container">
-                {props.state === "prompt" ?
-                    promptMessage :
-                    resultMessage
-                }
+                <label id="message-label">
+                    {showMessage()}
+                </label>
             </div>
         </div>
     )
