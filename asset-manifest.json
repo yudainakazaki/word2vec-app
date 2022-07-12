@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/word2vec-app/static/css/main.7e5912d1.css",
+    "main.css": "/word2vec-app/static/css/main.be74dab7.css",
     "main.js": "/word2vec-app/static/js/main.a3c53021.js",
     "index.html": "/word2vec-app/index.html",
-    "main.7e5912d1.css.map": "/word2vec-app/static/css/main.7e5912d1.css.map",
+    "main.be74dab7.css.map": "/word2vec-app/static/css/main.be74dab7.css.map",
     "main.a3c53021.js.map": "/word2vec-app/static/js/main.a3c53021.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e5912d1.css",
+    "static/css/main.be74dab7.css",
     "static/js/main.a3c53021.js"
   ]
 }
