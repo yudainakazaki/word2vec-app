@@ -9,13 +9,10 @@ import Buttons from './components/Buttons/Buttons';
 function App() {
 
   const [state, setState] = useState("prompt"); // prompt <-> result
-  const [score, setScore] = useState(0);
   const [words, setWords] = useState({
     word1: "",
     word2: ""
   })
-
-  console.log(score);
 
   return (
     <div className="App">
@@ -29,15 +26,12 @@ function App() {
           state={state}
           words={words}
           setWords={setWords}
-          score={score}
         />
         <Buttons 
           state={state}
           setState={setState}
           words={words}
           setWords={setWords}
-          score={score}
-          setScore={setScore}
         />
       </div>
       <Footer/>

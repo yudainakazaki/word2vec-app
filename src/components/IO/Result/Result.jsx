@@ -1,9 +1,7 @@
 import React from "react";
 import "./Result.css";
 
-function Result(props){
-
-    console.log("here: " + props.score);
+function Result(){
 
     return (
         <div className="result-main">

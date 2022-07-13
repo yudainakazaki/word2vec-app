@@ -24,11 +24,9 @@ function Buttons(props){
                         return response.json();
                     }
                 }).then(response => {
-                    console.log(response.ok);
-                    const val = Math.round(response["similarity"] * 1000) / 10;
-                    document.getElementById("score").innerHTML = val + " %";
-                    console.log(val);
-                    return val;
+                    const res = Math.round(response["similarity"] * 1000) / 10;
+                    document.getElementById("score").innerHTML = res + " %";
+                    return res;
                 }).catch((error) => {
                     console.log('error: ' + error);
                     document.getElementById("score").innerHTML = "503 😥";
@@ -39,7 +37,7 @@ function Buttons(props){
     const handleClick = () => {
         if(props.state === "prompt"){
             if (props.words.word1 !== "" && props.words.word2 !== ""){
-                props.setScore(callApi(props.words.word1, props.words.word2));
+                callApi(props.words.word1, props.words.word2);
                 props.setState("result");
             }
         }else{
@@ -48,7 +46,6 @@ function Buttons(props){
                 word1: "",
                 word2: ""
             });
-            props.setScore(0);
         }
     }
 
